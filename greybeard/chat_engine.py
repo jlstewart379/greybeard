@@ -1,8 +1,8 @@
 import os
-import openai
 import json
 import re
 from uuid import uuid4
+from openai import OpenAI
 from rich.console import Console
 from rich.panel import Panel
 from rich.prompt import Prompt
@@ -10,8 +10,8 @@ from greybeard.context_loader import load_repo_context
 from greybeard.models.change_model import DiffBlock, ChangeBlock, Suggestion
 from greybeard.storage.suggestion_store import save_suggestion, review_and_apply
 
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 console = Console()
-openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def parse_suggestion_from_reply(reply: str):
     match = re.search(r'```json(.*?)```', reply, re.DOTALL)
@@ -48,7 +48,7 @@ def run_chat(path: str):
             break
 
         try:
-            response = openai.ChatCompletion.create(
+            response = client.chat.completions.create(
                 model="gpt-4",
                 messages=[
                     {"role": "system", "content": system_message},
