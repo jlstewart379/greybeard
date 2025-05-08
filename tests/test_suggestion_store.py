@@ -1,5 +1,5 @@
-from models.change_model import DiffBlock, ChangeBlock, Suggestion
-from storage.suggestion_store import save_suggestion, load_suggestions
+from greybeard.models.change_model import DiffBlock, ChangeBlock, Suggestion
+from greybeard.storage.suggestion_store import save_suggestion, load_suggestions
 import os
 import shutil
 

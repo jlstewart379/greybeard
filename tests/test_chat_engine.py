@@ -1,4 +1,4 @@
-from chat_engine import parse_suggestion_from_reply
+from greybeard.chat_engine import parse_suggestion_from_reply
 
 def test_parse_valid_reply():
     reply = '''```json
@@ -9,8 +9,8 @@ def test_parse_valid_reply():
   "diff": {
     "start_line": 5,
     "end_line": 8,
-    "original": ["line1\n"],
-    "replacement": ["line2\n"]
+    "original": ["line1\\n"],
+    "replacement": ["line2\\n"]
   }
 }
 ```'''
