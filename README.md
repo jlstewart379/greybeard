@@ -1,6 +1,6 @@
 # 🧙 Greybeard
 
-**Greybeard** is a terminal-native AI assistant for infrastructure engineers. It analyzes your codebase using OpenAI's GPT models and gives actionable suggestions — with inline diffs and the ability to apply changes directly from the terminal.
+**Greybeard** is a terminal-native AI assistant for infrastructure engineers. It analyzes your codebase using OpenAI's GPT models and gives actionable suggestions.
 
 ---
 
